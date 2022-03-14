@@ -20,6 +20,25 @@
                     <a class="nav-link" href="#">Метки</a>
                 </li>
             </ul>
+            <ul class="navbar-nav ml-auto">
+                <!-- Authentication Links -->
+                @if (Route::has('login'))
+                    <div class="">
+                        @auth
+                            <a href="{{ url('/dashboard') }}" class="text-muted">Dashboard</a>
+                        @else
+                            <a href="{{ route('login') }}" class="text-muted">Log in</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ms-4 text-muted">Register</a>
+                            @endif
+                        @endif
+                    </div>
+                @endif
+            </ul>
+            </ul>
+            
+
         </div>
     </div>
 </nav>
