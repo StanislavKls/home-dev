@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,11 @@ Route::resource('articles', ArticleController::class);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin/articles', [AdminController::class, 'articles'])->name('admin.articles');
+
+});
 
 require __DIR__ . '/auth.php';

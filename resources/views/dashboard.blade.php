@@ -7,7 +7,7 @@
 
     <div class="card my-4">
         <div class="card-body">
-            You're logged in!
+            Вы вошли!
         </div>
     </div>
 </x-app-layout>

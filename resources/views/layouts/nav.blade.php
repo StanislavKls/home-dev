@@ -25,7 +25,9 @@
                 @if (Route::has('login'))
                     <div class="">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="text-muted">Dashboard</a>
+                            <a href="{{ route('admin.index') }}" class="text-muted">Админка</a>
+                            <a href="{{ route('admin.articles') }}" class="text-muted">Статьи</a>
+                            <a href="{{ url('/logout') }}" class="text-muted" data-method="post" rel="nofollow">Выйти</a>
                         @else
                             <a href="{{ route('login') }}" class="text-muted">Log in</a>
 
@@ -36,7 +38,7 @@
                     </div>
                 @endif
             </ul>
-            </ul>
+        </ul>
             
 
         </div>

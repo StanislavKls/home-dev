@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Article;
+use App\Models\User;
+use Illuminate\Http\Request;
+
+class AdminController extends Controller
+{
+    public function index()
+    {
+        $users = User::all();
+        return view('admin.index', compact('users'));
+    }
+    public function articles()
+    {
+        $articles = Article::all();
+        return view('admin.articles', compact('articles'));
+    }
+}
